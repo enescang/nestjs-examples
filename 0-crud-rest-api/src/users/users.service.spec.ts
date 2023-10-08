@@ -4,7 +4,6 @@ import { UsersController } from './users.controller';
 
 describe('UsersService', () => {
   let service: UsersService;
-  let controller: UsersController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -12,9 +11,7 @@ describe('UsersService', () => {
       providers: [UsersService],
     }).compile();
 
-    await module.createNestApplication();
     service = module.get<UsersService>(UsersService);
-    controller = module.get<UsersController>(UsersController);
   });
 
   it('should be defined', () => {
